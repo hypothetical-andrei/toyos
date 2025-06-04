@@ -1,0 +1,10 @@
+?start: statement*
+
+?statement: "print" STRING      -> print_stmt
+          | "let" NAME "=" NUMBER  -> let_stmt
+
+%import common.CNAME -> NAME
+%import common.NUMBER
+%import common.ESCAPED_STRING -> STRING
+%import common.WS
+%ignore WS
